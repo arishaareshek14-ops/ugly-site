@@ -1,0 +1,103 @@
+body {
+    background: linear-gradient(45deg, red, blue, lime, yellow);
+    animation: bgFlash 0.5s infinite;
+    font-family: Comic Sans MS, cursive;
+    text-align: center;
+}
+
+.title {
+    font-size: 60px;
+    color: purple;
+    animation: spin 2s infinite linear;
+}
+
+.crazy-btn {
+    padding: 20px;
+    font-size: 20px;
+    background: hotpink;
+    border: 5px dashed yellow;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.crazy-btn:hover {
+    transform: scale(2) rotate(20deg);
+    background: lime;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: black;
+    margin: 50px auto;
+    animation: moveBox 1s infinite alternate;
+}
+
+.text {
+    font-size: 30px;
+    color: cyan;
+    animation: glitch 0.3s infinite;
+}
+
+.cat {
+    animation: spin 1s infinite linear, bounce 0.5s infinite;
+}
+
+/* АНИМАЦИИ */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes moveBox {
+    0% { transform: translateX(-200px) rotate(0deg); }
+    100% { transform: translateX(200px) rotate(360deg); }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    75% { transform: translate(5px, 5px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes bgFlash {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+}
+
+
+body:hover {
+    animation: shake 0.2s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(10px, -10px); }
+    50% { transform: translate(-10px, 10px); }
+    75% { transform: translate(10px, 10px); }
+    100% { transform: translate(0); }
+}
+
+/* мигающий текст */
+.title {
+    animation: spin 2s infinite linear, blink 0.3s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ужасный курсор */
+body {
+    cursor: crosshair;
+}
